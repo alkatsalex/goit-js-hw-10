@@ -9,7 +9,6 @@ export const el = {
     loader: document.querySelector('.loader')
 }
 
-console.log(el.loader)
 
 export function fetchBreeds() {
     el.loader.classList.toggle('js-hiden');
@@ -22,8 +21,10 @@ export function fetchBreeds() {
   })
 .then(data => {
     console.log(data); return data
-}).catch(error => {
-    el.error.classList.toggle('js-hiden');
+})
+.catch(error => {
+  loading()
+    el.loader.classList.toggle('js-hiden');
     Notiflix.Notify.failure(`😿cat not found`, {timeout: 10000, position: 'center-center'})
   });
 } 
@@ -44,8 +45,7 @@ export function fetchCatByBreed(breedId) {
             return data[0]
         }
 ).catch(error => {
-  el.breedSelect.classList.toggle('js-hiden');
-  el.loader.classList.toggle('js-hiden');
+  loading()
   Notiflix.Notify.failure(`😿cat not found`, {timeout: 10000, position: 'center-center'})
 });
 }
@@ -53,7 +53,8 @@ export function fetchCatByBreed(breedId) {
 
  export function loading() {
     el.loader.classList.toggle('js-hiden');
-        el.breedSelect.classList.toggle('js-hiden');
+    el.breedSelect.classList.toggle('js-hiden');
+
   }
 
 

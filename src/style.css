@@ -1,0 +1,74 @@
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: #c839ec;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
+
+    .js-hiden {
+        display: none;
+        
+    }
+
+    .photo {
+        border-radius: 10px;
+        width: 300px;
+        margin: 19px, 23px 12px;
+    }
+
+    .cat-info {
+        margin-top: 15px;
+    }
+
+    .card-border {
+        border: 1px solid var(--black-stroke, #000);
+        width: 300px;
+        padding: 19px 23px 27px 23px;
+        border-radius: 15px;
+        background: var(--White, #FFF);
+    }
+
+  
+
+
+    .breeds {
+        font-family: 'Inter', sans-serif;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .temperament {
+        font-family: 'Inter', sans-serif;
+        width: 300px;
+        color: #7A7985;
+        font-family: Inter;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .description {
+        color: #000;  
+        width: 300px;      
+        font-family: Inter;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
