@@ -1,12 +1,6 @@
-// import axios from "axios";
 import Notiflix from 'notiflix';
 
-
-axios.defaults.headers.common["x-api-key"] = "live_heLL8lPfd4A2Lpv2S81Bs4OmGBDqCQu3c6GUdGoDG7DG6OuoRNBt0u87Pw8zAWuP";
-
 const KeY = "live_heLL8lPfd4A2Lpv2S81Bs4OmGBDqCQu3c6GUdGoDG7DG6OuoRNBt0u87Pw8zAWuP"
-
-
 
 export const el = {
     catCard:document.querySelector('.cat-info'),
@@ -50,10 +44,10 @@ export function fetchCatByBreed(breedId) {
             return data[0]
         }
 ).catch(error => {
-    el.breedSelect.classList.toggle('js-hiden');
-    el.loader.classList.toggle('js-hiden');
-    Notiflix.Notify.failure(`😿cat not found`, {timeout: 10000, position: 'center-center'})
-  });
+  el.breedSelect.classList.toggle('js-hiden');
+  el.loader.classList.toggle('js-hiden');
+  Notiflix.Notify.failure(`😿cat not found`, {timeout: 10000, position: 'center-center'})
+});
 }
 
 
