@@ -1,5 +1,5 @@
 import { fetchBreeds, fetchCatByBreed, el, loading } from './cat-api.js';
-import axios from "axios";
+// import axios from "axios";
 
 
 // axios.defaults.headers.common["x-api-key"] = "live_heLL8lPfd4A2Lpv2S81Bs4OmGBDqCQu3c6GUdGoDG7DG6OuoRNBt0u87Pw8zAWuP";
