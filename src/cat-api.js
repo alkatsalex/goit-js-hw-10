@@ -15,6 +15,7 @@ export function fetchBreeds() {
   return  fetch(`https://api.thecatapi.com/v1/breeds?api_key=${KeY}`)
   .then(response => {
     if (!response.ok) {
+
       throw new Error(response.status);
     }
     return response.json();
@@ -25,9 +26,10 @@ export function fetchBreeds() {
 .catch(error => {
   loading()
     el.loader.classList.toggle('js-hiden');
-    Notiflix.Notify.failure(`😿cat not found`, {timeout: 10000, position: 'center-center'})
+    Notiflix.Notify.failure(`😿cat not found`, {timeout: 10000, position: 'right-top', clickToClose: true})
   });
-} 
+}
+
 
 export function fetchCatByBreed(breedId) {
     loading()
@@ -35,19 +37,22 @@ export function fetchCatByBreed(breedId) {
     return fetch(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}&api_key=${KeY}`)
     .then(response => {
         if (!response.ok) {
+
           throw new Error(response.status);
         }
         return response.json();
       })
     .then(
         data => {
-            console.log(data[0])
+            // console.log(data[0])
             return data[0]
         }
-).catch(error => {
-  loading()
-  Notiflix.Notify.failure(`😿cat not found`, {timeout: 10000, position: 'center-center'})
-});
+      )
+      // .catch(error => {
+      //   loading()
+          
+      //     Notiflix.Notify.failure(`😿cat not found`, {timeout: 5000, position: 'right-top', clickToClose: true})
+      //   }); 
 }
 
 

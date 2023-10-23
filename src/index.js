@@ -1,4 +1,5 @@
 import { fetchBreeds, fetchCatByBreed, el, loading } from './cat-api.js';
+import Notiflix from 'notiflix';
 
 const KeY = "live_heLL8lPfd4A2Lpv2S81Bs4OmGBDqCQu3c6GUdGoDG7DG6OuoRNBt0u87Pw8zAWuP"
 
@@ -34,6 +35,11 @@ el.breedSelect.addEventListener('change', () => {
       return el.catCard.innerHTML = markup
     }
   )
+  .catch(error => {
+    loading()
+      
+      Notiflix.Notify.failure(`😿cat not found`, {timeout: 5000, position: 'right-top', clickToClose: true})
+    }); 
 })
 
 
